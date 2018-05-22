@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 
-    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/iscroll.js"></script>
     <script type="text/javascript" src="js/logan_script.js"></script>
@@ -29,70 +29,73 @@
     <div id="wrapper">
         <a href="#main" id="skip-nav">본문 바로가기</a>
         <a href="#gnb" id="skip-nav">메뉴 바로가기</a>
-        <header id="header">
-            <div id="header-top">
-                <div id="header-top-box">
-                    <ul id="top-nav">
-                        <li class="login"><a href="#">로그인</a></li>
-                        <li class="member"><a href="#">회원가입</a></li>
-                        <li class="sitemap"><a href="#">사이트맵</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="header-bottom">
-                <div id="header-bottom-box">
-                    <h1>
-                        <a href="#"><img alt="KWWA 로고" src="img/logo.jpg" /></a>
-                    </h1>
 
-                    <ul id="gnb">
-                        <span class="select"></span>
-                        <li class="sub1"><a href="#">협회소개</a>
-                            <ul>
-                                <span class="sub1_span"></span>
-                                <li><a href="#">협회소개01</a></li>
-                                <li><a href="#">협회소개02</a></li>
-                                <li><a href="#">협회소개03</a></li>
-                            </ul>
-                        </li>
-                        <li class="sub2"><a href="#">종목소개</a>
-                            <ul>
-                                <span class="sub2_span"></span>
-                                <li><a href="#">종목소개01</a></li>
-                                <li><a href="#">종목소개02</a></li>
-                                <li><a href="#">종목소개03</a></li>
-                            </ul>
-                        </li>
-                        <li class="sub3"><a href="#">대회정보</a>
-                            <ul>
-                                <span class="sub3_span"></span>
-                                <li><a href="#">대회정보01</a></li>
-                                <li><a href="#">대회정보02</a></li>
-                                <li><a href="#">대회정보03</a></li>
-                            </ul>
-                        </li>
-                        <li class="sub4"><a href="#">팀/선수정보</a>
-                            <ul>
-                                <span class="sub4_span"></span>
-                                <li><a href="#">팀/선수정보01</a></li>
-                                <li><a href="#">팀/선수정보02</a></li>
-                                <li><a href="#">팀/선수정보03</a></li>
-                            </ul>
-                        </li>
-                        <li class="sub5"><a href="#">더보기+</a>
-                            <ul>
-                                <span class="sub5_span"></span>
-                                <li><a href="#">협회소식</a></li>
-                                <li><a href="#">커뮤니티</a></li>
-                                <li>
-                                    <a href="#"></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+        <div id="header-wrapper">
+            <header id="header">
+                <div id="header-top">
+                    <div id="header-top-box">
+                        <ul id="top-nav">
+                            <li class="login"><a href="#">로그인</a></li>
+                            <li class="member"><a href="#">회원가입</a></li>
+                            <li class="sitemap"><a href="#">사이트맵</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </header>
+                <div id="header-bottom">
+                    <div id="header-bottom-box">
+                        <h1>
+                            <a href="#"><img alt="KWWA 로고" src="img/logo.jpg" /></a>
+                        </h1>
+
+                        <ul id="gnb">
+                            <span class="select"></span>
+                            <li class="sub1"><a href="#">협회소개</a>
+                                <ul>
+                                    <span class="sub1_span"></span>
+                                    <li><a href="#">협회소개01</a></li>
+                                    <li><a href="#">협회소개02</a></li>
+                                    <li><a href="#">협회소개03</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub2"><a href="#">종목소개</a>
+                                <ul>
+                                    <span class="sub2_span"></span>
+                                    <li><a href="#">종목소개01</a></li>
+                                    <li><a href="#">종목소개02</a></li>
+                                    <li><a href="#">종목소개03</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub3"><a href="#">대회정보</a>
+                                <ul>
+                                    <span class="sub3_span"></span>
+                                    <li><a href="#">대회정보01</a></li>
+                                    <li><a href="#">대회정보02</a></li>
+                                    <li><a href="#">대회정보03</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub4"><a href="#">팀/선수정보</a>
+                                <ul>
+                                    <span class="sub4_span"></span>
+                                    <li><a href="#">팀/선수정보01</a></li>
+                                    <li><a href="#">팀/선수정보02</a></li>
+                                    <li><a href="#">팀/선수정보03</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub5"><a href="#">더보기+</a>
+                                <ul>
+                                    <span class="sub5_span"></span>
+                                    <li><a href="#">협회소식</a></li>
+                                    <li><a href="#">커뮤니티</a></li>
+                                    <li>
+                                        <a href="#"></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+        </div>
 
 
         <main id="main">
@@ -111,21 +114,23 @@
                 <dl class="board">
                     <dt class="on"><h2><a href="#">공지사항</a></h2></dt>
                     <dd>
-                        <a href="#" class="more">공지사항 더보기</a>
+
                         <ul>
-                            <li><a href="#">공지사항입니다.</a><span class="date">2018-05-22</span></li>
-                            <li><a href="#">공지사항입니다.</a><span class="date">2018-05-22</span></li>
+                            <li><a href="#">공지사항입니다.</a><span class="date">2018-05-22</span><span class="board-content 001">1,2차에 걸쳐 기존의 매각 대상 경기정중 2012년형과 2015년형 Nautique가 매각 종료됨에 따라 나머지 대상물에 대해 공매가를 인하하여 3차 매각을 재차 공고 합니다.</span></li>
+                            <li><a href="#">공지사항입니다.</a><span class="date">2018-05-22</span><span class="board-content 002">1,2차에 걸쳐 기존의 매각 대상 경기정중 2012년형과 2015년형 Nautique가 매각 종료됨에 따라 나머지 대상물에 대해 공매가를 인하하여 3차 매각을 재차 공고 합니다.</span></li>
 
                         </ul>
                     </dd>
+                    <a href="#" class="more more01">공지사항 더보기</a>
                     <dt><h2><a href="#">행사일정</a></h2></dt>
                     <dd>
-                        <a href="#" class="more">행사일정 더보기</a>
+
                         <ul>
                             <li><a href="#">행사일정입니다.</a><span class="date">2018-05-22</span></li>
                             <li><a href="#">행사일정입니다.</a><span class="date">2018-05-22</span></li>
                         </ul>
                     </dd>
+                    <a href="#" class="more more02">행사일정 더보기</a>
                 </dl>
 
                 <ul class="link">

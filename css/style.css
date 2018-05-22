@@ -57,13 +57,12 @@ body {
     background: #ffffff;
 }
 
+h2 {font-size: 18px;}
+
 #wrapper {
     min-width: 320px;
     overflow: hidden;
-    background:pink;
-    padding: 0 16px;
-    box-sizing: border-box;
-}
+    }
 
 #skip-nav {
     position: fixed;
@@ -84,8 +83,13 @@ body {
 }
 
 /* header */
+#header-wrapper {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
 #header {position: relative;}
-#header-top-box {background: yellow; position: relative; width: 100%; height: 20px; margin: 0 auto;}
+#header-top-box {position: relative; width: 100%; height: 20px; margin: 0 auto;}
 #top-nav {position: absolute; right: 0px; top: 38px; font-size: 9px; color: #333333;}
 #top-nav li {float: left; line-height: 16px;}
 #top-nav li + li:before {content: '|'; margin: 0 2px; font-size: 9px; color: #333333;}
@@ -100,7 +104,7 @@ body {
 
 
 
-#gnb {margin: 44px auto 0; display: block; height: 100%; background: green; overflow: auto;}
+#gnb {margin: 44px auto 0; display: block; height: 100%; overflow: auto;}
 #gnb > li {float: left; width: 20%; text-align: center;}
 #gnb > li > a {font-size: 12px; font-weight: 700; }
 #gnb li.sub4 a {letter-spacing: -1px}
@@ -109,4 +113,37 @@ body {
 
 .select {display: block; height: 3px; background:#dcdcdc;}
 .sub1_span {display: block; position: absolute; left: 0px; top: -50px; width: 20%; height: 3px;  background: red;}
+
+
+
+/* main */
+#main {background: red;}
+#main-visual img {width: 100%; height: auto;}
+.indicator {position:absolute; top: 100px;}
+
+
+/*board*/
+
+#main-content dl {position: relative; height: 192px; }
+
+#main-content dl.board dt {float: left; width: 50%; height: 48px; line-height: 30px; font-size: 14px; text-align: center;}
+#main-content dl.board dt a {color: #afafaf; display: block; width: 100%; height: 48px; line-height: 48px}
+#main-content dl.board dt.on {background:#1b4c77; }
+#main-content dl.board dt {background:#113956; }
+#main-content dl.board dt.on a {color: #fff;}
+#main-content dl.board dt.on a:after {content: ""; display: block; margin: -15px auto; width: 65px; height: 3px; border-bottom: 1px solid #fff; }
+#main-content dl.board dt a:hover {font-size: 19px; border-bottom: 1px solid #fff; }
+#main-content dl.board dt {position: relative;}
+
+#main-content dl.board dd {position: absolute; top: 48px; left: 0px; width: 100%;display: none; background:#eeeeee}
+#main-content dl.board dd ul li + li {background:#e1e0e0}
+#main-content dl.board dt.on + dd {display: block;}
+#main-content dl a.more {position: absolute; right: 50%; top: 10px; margin-right: 16px; width: 15px; height: 15px; background: url(../img/icon_more.png) 0 center no-repeat ; background-size: 100%; text-indent: -9999px}
+#main-content dl a.more02 {display: block; right: 0px; top: 10px; }
+#main-content dl.board dd ul li {position: relative; height: 72px; }
+#main-content dl.board dd ul li a {display: block; width: 100%; padding-left: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#main-content dl.board dd ul li span.board-content {font-size: 12px; display: block; width: 90%; padding-left: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#main-content dl.board dd ul li a:hover {color: #1b4c77;}
+#main-content dl.board dd ul li span.date {position: absolute; right: 16px; top: 0; font-size: 12px; color: #777777;}
+
 
