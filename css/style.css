@@ -1,8 +1,12 @@
 @charset "utf-8";
+
 /* CSS Document */
 
+
 /* web font */
+
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 /* * Noto Sans KR (korean) http://www.google.com/fonts/earlyaccess */
 
 @font-face {
@@ -62,7 +66,8 @@ h2 {font-size: 18px;}
 #wrapper {
     min-width: 320px;
     overflow: hidden;
-    }
+        
+}
 
 #skip-nav {
     position: fixed;
@@ -85,6 +90,7 @@ h2 {font-size: 18px;}
 /* header */
 #header-wrapper {
     width: 100%;
+    
     padding: 0 16px;
     box-sizing: border-box;
 }
@@ -104,7 +110,7 @@ h2 {font-size: 18px;}
 
 
 
-#gnb {margin: 44px auto 0; display: block; height: 100%; overflow: auto;}
+#gnb {margin: 44px auto 0; display: block; height: 100%;  overflow: auto;}
 #gnb > li {float: left; width: 20%; text-align: center;}
 #gnb > li > a {font-size: 12px; font-weight: 700; }
 #gnb li.sub4 a {letter-spacing: -1px}
@@ -113,6 +119,7 @@ h2 {font-size: 18px;}
 
 .select {display: block; height: 3px; background:#dcdcdc;}
 .sub1_span {display: block; position: absolute; left: 0px; top: -50px; width: 20%; height: 3px;  background: red;}
+
 
 
 
@@ -145,5 +152,33 @@ h2 {font-size: 18px;}
 #main-content dl.board dd ul li span.board-content {font-size: 12px; display: block; width: 90%; padding-left: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 #main-content dl.board dd ul li a:hover {color: #1b4c77;}
 #main-content dl.board dd ul li span.date {position: absolute; right: 16px; top: 0; font-size: 12px; color: #777777;}
+
+
+
+/*link*/
+.link {overflow: hidden;}
+.link li {width: 100%; height: 72px; text-align: center; float: left;}
+.link li a {display: block; width: 100%; height: 72px; line-height: 72px;}
+
+
+/*footer*/
+#footer {height: 100px; background: #232323; text-align: center; padding: 10px 0; box-sizing: border-box;}
+#footer h3 a {display: block; width: 24px; height: 24px; background: pink; margin: 0 auto; text-indent: -9999px;}
+#footer-menu ul {display: block; margin: 10px auto; }
+#footer-menu ul li{display: inline-block; color: #d3d3d3; font-size: 9px;}
+#footer-menu ul li:first-child {color:#ff0000; }
+#footer-menu ul li + li:before {content: '|'; margin: 0 20px; font-size: 14px; color: #777777;}
+
+.copyright {font-size: 7px; color: #666666;}
+
+
+
+
+
+
+
+
+
+
 
 
