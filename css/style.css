@@ -89,6 +89,7 @@ h2 {font-size: 18px;}
 }
 
 /* header */
+
 #header-wrapper {
     width: 100%;
     
@@ -144,23 +145,28 @@ h2 {font-size: 18px;}
 #gnb ul li + li:before {content: ''; display: block; margin: 0 auto; width: 85%; border-bottom: 1px solid #aaa}
 
 
-/* main image*/
-#main {background: red;}
+/* main image */
+
 div.image-swipe {width: 100%; height: 150px; position: relative; }
 div.image-swipe > div.box {position: absolute; left: 0; top: 0; height: 100%; width: 100%; overflow: hidden;}
 div.image-swipe ul.image {width: 100%; height: 100%; position: absolute; left: 0; top: 0; /*transition: left 0.4s;*/}
 div.image-swipe ul.image li {width: 100%; height: 100%; position: absolute; left: 0; top: 0; display: none;}
 div.image-swipe ul.image li:first-child {display: block;}
-div.image-swipe ul.image li a {display: block; width: 100%; height: 100%; text-align: center;}
+div.image-swipe ul.image li a {display: block; width: 100%; height: 100%; text-align: center; }
 div.image-swipe ul.image li a img {width: 100%; height: 100%;}
 
-div.image-swipe p.control a.prev {position: absolute; top: 50%; margin-top: -18px; left: 10px;}
-div.image-swipe p.control a.next {position: absolute; top: 50%; margin-top: -18px; right: 10px;}
+div.image-swipe p.control a.prev {position: absolute; top: 50%; margin-top: -18px; left: 0px; padding: 0 5px;}
+div.image-swipe p.control a.next {position: absolute; top: 50%; margin-top: -18px; right: 0px; padding: 0 5px;}
+div.image-swipe p.control a {background: rgba(0,0,0,0.3);}
+div.image-swipe ul.indicator {position: absolute; bottom: 20px; width: 100%; text-align: center;}
+div.image-swipe ul.indicator li {display: inline-block; margin: 0 4px;}
+div.image-swipe ul.indicator li a {display: block; width: 8px; height: 8px; border: 2px solid #ffffff; border-radius: 50%; overflow: hidden; box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3); text-indent: -999px; }
+div.image-swipe ul.indicator li.on a {border-color: #00a0e9; background: #00a0e9;}
+
 
 /*board*/
 
 #main-content dl {position: relative; height: 192px; }
-
 #main-content dl.board dt {float: left; width: 50%; height: 48px; line-height: 30px; font-size: 14px; text-align: center;}
 #main-content dl.board dt a {color: #afafaf; display: block; width: 100%; height: 48px; line-height: 48px}
 #main-content dl.board dt.on {background:#1b4c77; }
@@ -178,13 +184,14 @@ div.image-swipe p.control a.next {position: absolute; top: 50%; margin-top: -18p
 #main-content dl.board dd ul li {position: relative; height: 72px; }
 #main-content dl.board dd ul li a {display: block; width: 100%; padding: 5px 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-#main-content dl.board dd ul li span.board-content {font-size: 12px; background: pink; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; white-space:normal; line-height:15px; height:30px; padding: 0 16px; overflow:hidden;text-overflow: ellipsis; text-align:left;}
+#main-content dl.board dd ul li span.board-content {font-size: 12px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; white-space:normal; line-height:15px; height:30px; padding: 0 16px; overflow:hidden;text-overflow: ellipsis; text-align:left;}
 #main-content dl.board dd ul li a:hover {color: #1b4c77;}
 #main-content dl.board dd ul li span.date {position: absolute; right: 16px; top: 0; font-size: 12px; color: #777777;}
 
 
 
 /*link*/
+
 .link {overflow: hidden;}
 .link li {position: relative; width: 100%; height: 72px; text-align: center; float: left;}
 .link li a {display: block; color: #fff; width: 100%; height: 72px; line-height: 72px;}
@@ -205,15 +212,35 @@ div.image-swipe p.control a.next {position: absolute; top: 50%; margin-top: -18p
 .link > li:nth-child(4):before {display:none;}
 .link > li:last-child:before {display:none;}
 
+
+
+/* Banner*/
+
+div.slide-banner {width:100%; height: 72px; position: relative; left: 0px; top: 0px; padding: 0px;}
+div.slide-banner div.box {overflow: hidden; background: #eeeeee; position: relative; height: 72px;}
+div.slide-banner div.box ul {position: absolute; left: 0; top: 0; width: 3600px; background: yellow;}
+div.slide-banner div.box ul li {float: left; width: 150px; margin: 0 auto;}
+div.slide-banner div.box ul li img {width: 100%;}
+
+div.slide-banner p.control a.prev,
+div.slide-banner p.control a.next {position: absolute; top: 20px; width: 40px; height: 35px; line-height: 35px; box-sizing: border-box; background: rgba(0,0,0,0.3)}
+
+div.slide-banner p.control a.prev {left: 0px; }
+div.slide-banner p.control a.next {right: 0px;}
+
+
+
 /*footer*/
 #footer {height: 100px; background: #232323; text-align: center; padding: 10px 0; box-sizing: border-box;}
-#footer h3 a {display: block; width: 24px; height: 24px; background: pink; margin: 0 auto; text-indent: -9999px;}
-#footer-menu ul {display: block; margin: 10px auto; }
+#footer h3 a {display: block; width: 24px; height: 24px; background: url(../img/icon_facebook.png) center no-repeat; background-size: 100%; margin: 0 auto; text-indent: -9999px;}
+#footer-menu ul {display: block; margin: 0px auto; }
 #footer-menu ul li{display: inline-block; color: #d3d3d3; font-size: 9px; line-height: 1;}
 #footer-menu ul li:first-child {color:#ff0000; }
 #footer-menu ul li + li:before {content: '|'; margin: 0 20px; font-size: 14px; color: #777777;}
 
 .copyright {font-size: 7px; color: #666666;}
+
+
 
 
 

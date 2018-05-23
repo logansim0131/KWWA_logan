@@ -12,7 +12,10 @@
     <meta name="robots" content="index,follow" />
 
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/large.css" />
+    <link rel="stylesheet" type="text/css" media="all and (min-width:50px) and (max-width:767px)"   href="css/style.css">
+    <link rel="stylesheet" type="text/css" media="all and (min-width:768px) and (max-width:1199px)"  href="css/medium.css">
+    
     <link rel="stylesheet" href="css/jquery-ui.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="fa/css/font-awesome.min.css" />
@@ -205,9 +208,10 @@
                                 </ul>
                             </div>
                             <p class="control">
-                                <a href="#" class="prev"><i class="fa fa-chevron-left"><span>이전</span></i></a>
-                                <a href="#" class="next"><i class="fa fa-chevron-right"><span>다음</span></i></a>
-                                <a href="#" class="play"><i class="fa fa-play"><span>자동넘김/정지버튼</span></i></a>
+                               <a href="#" class="prev"><img alt="이전 이미지" src="img/icon_arrow_l.png" /></a>
+                        <a href="#" class="next"><img alt="다음 이미지" src="img/icon_arrow_r.png" /></a>
+                                
+                                
                             </p>
                         </div>
                     </li>
@@ -228,6 +232,40 @@
         </footer>
 
     </div>
+    
+     <script>
+        'use strict';
+        /**/
+        $('#main-content dt').on('click focus', function() {
+            $('#main-content dt').removeClass('on');
+            $(this).addClass('on');
+        });
+
+
+        $('#gnb > li > a').on('mouseenter focus', function() {
+            $('#gnb ul').css({
+                'display': 'none'
+            });
+            $('header').addClass('on');
+            $(this).next().css({
+                'display': 'block'
+            });
+        });
+
+        $('#header-bottom').on('mouseleave', function() {
+            $('#gnb ul').css({
+                'display': 'none'
+            });
+            $('header').removeClass('on');
+        });
+
+        /*튀김 방지*/
+        $(document).on('click', 'a[href="#"]', function(e) {
+            e.preventDefault();
+        });
+
+     </script>
+         
 </body>
 
 </html>
