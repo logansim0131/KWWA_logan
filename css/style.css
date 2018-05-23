@@ -62,7 +62,7 @@ body {
 
 }
 
-h2 {font-size: 18px;}
+h2,h3 {font-size: 18px;}
 
 #wrapper {
     min-width: 320px;
@@ -181,7 +181,7 @@ div.image-swipe ul.indicator li.on a {border-color: #00a0e9; background: #00a0e9
 #main-content dl.board dt.on + dd {display: block;}
 #main-content dl a.more {position: absolute; right: 50%; top: 10px; margin-right: 16px; width: 15px; height: 15px; background: url(../img/icon_more.png) 0 center no-repeat ; background-size: 100%; text-indent: -9999px}
 #main-content dl a.more02 {display: block; right: 0px; top: 10px; }
-#main-content dl.board dd ul li {position: relative; height: 72px; }
+#main-content dl.board dd ul li {position: relative; height: 75px; }
 #main-content dl.board dd ul li a {display: block; width: 100%; padding: 5px 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 #main-content dl.board dd ul li span.board-content {font-size: 12px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; white-space:normal; line-height:15px; height:30px; padding: 0 16px; overflow:hidden;text-overflow: ellipsis; text-align:left;}
@@ -193,8 +193,8 @@ div.image-swipe ul.indicator li.on a {border-color: #00a0e9; background: #00a0e9
 /*link*/
 
 .link {overflow: hidden;}
-.link li {position: relative; width: 100%; height: 72px; text-align: center; float: left;}
-.link li a {display: block; color: #fff; width: 100%; height: 72px; line-height: 72px;}
+.link li {position: relative; width: 100%; height: 75px; text-align: center; float: left;}
+.link li a {display: block; color: #fff; width: 100%; height: 75px; line-height: 75px;}
 .link li a {background: url(../img/320_link_01.jpg) center center no-repeat; background-size: 100%; transition:all 0.5s;}
 .link > li:nth-child(2) a {background-image: url(../img/320_link_02.jpg); color:#2d2d2d; line-height: 60px;}
 .link > li:nth-child(2) span {display: block; margin: -16px auto; color:#2d2d2d; font-size: 10px; font-weight: 400; line-height: 12px}
@@ -219,12 +219,10 @@ div.image-swipe ul.indicator li.on a {border-color: #00a0e9; background: #00a0e9
 .link > li:nth-child(7):before {background-image: url(../img/icon_more_b.png);}
 
 
-
-
 /* Banner*/
 
-div.slide-banner {width:100%; height: 72px; position: relative; left: 0px; top: 0px; padding: 0px;}
-div.slide-banner div.box {overflow: hidden; background: #eeeeee; position: relative; height: 72px;}
+div.slide-banner {width:100%; height: 75px; position: relative; left: 0px; top: 0px; padding: 0px;}
+div.slide-banner div.box {overflow: hidden; background: #eeeeee; position: relative; height: 75px;}
 div.slide-banner div.box ul {position: absolute; left: 0; top: 0; width: 3600px; background: yellow;}
 div.slide-banner div.box ul li {float: left; width: 150px; margin: 0 auto;}
 div.slide-banner div.box ul li img {width: 100%;}
@@ -247,5 +245,13 @@ div.slide-banner p.control a.next {right: 0px;}
 
 .copyright {font-size:5px; letter-spacing: -0.8px; color: #666666;}
 
+
+
+
+/*
+
+i.fa {display: inline-block; overflow: hidden; position: relative; vertical-align: middle;}
+i.fa span {position: absolute; left: -999px;}
+*/
 
 

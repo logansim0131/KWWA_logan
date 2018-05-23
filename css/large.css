@@ -14,7 +14,7 @@ body {
 
 }
 
-h2 {font-size: 18px;}
+h2,h3 {font-size: 24px;}
 
 #wrapper {
     max-width: 1200px;
@@ -23,23 +23,6 @@ h2 {font-size: 18px;}
     position: relative;
 }
 
-#skip-nav {
-    position: fixed;
-    left: 0;
-    top: -40px;
-    width: 100%;
-    text-align: center;
-    line-height: 40px;
-    background: rgba(27, 76, 119, 0.5);
-    color: #ffffff;
-    font-size: 16px;
-    z-index: 10000;
-    transition: top 0.3s;
-}
-
-#skip-nav:focus {
-    top: 0;
-}
 
 /* header */
 
@@ -100,7 +83,7 @@ h2 {font-size: 18px;}
 
 /* main image */
 
-div.image-swipe {width: 100%; height: 350px; position: relative; }
+div.image-swipe {width: 100%; height: 500px; position: relative; }
 div.image-swipe > div.box {position: absolute; left: 0; top: 0; height: 100%; width: 100%; overflow: hidden;}
 div.image-swipe ul.image {width: 100%; height: 100%; position: absolute; left: 0; top: 0; /*transition: left 0.4s;*/}
 div.image-swipe ul.image li {width: 100%; height: 100%; position: absolute; left: 0; top: 0; display: none;}
@@ -111,7 +94,7 @@ div.image-swipe ul.image li a img {width: 100%; height: 100%;}
 div.image-swipe p.control a.prev {position: absolute; top: 50%; margin-top: -18px; left: 0px; padding: 0 5px;}
 div.image-swipe p.control a.next {position: absolute; top: 50%; margin-top: -18px; right: 0px; padding: 0 5px;}
 div.image-swipe p.control a {background: rgba(0,0,0,0.3);}
-div.image-swipe ul.indicator {position: absolute; bottom: 20px; width: 100%; text-align: center;}
+div.image-swipe ul.indicator {position: absolute; left: -25%; bottom: 20px; width: 100%; text-align: center;}
 div.image-swipe ul.indicator li {display: inline-block; margin: 0 4px;}
 div.image-swipe ul.indicator li a {display: block; width: 8px; height: 8px; border: 2px solid #ffffff; border-radius: 50%; overflow: hidden; box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3); text-indent: -999px; }
 div.image-swipe ul.indicator li.on a {border-color: #00a0e9; background: #00a0e9;}
@@ -120,14 +103,14 @@ div.image-swipe ul.indicator li.on a {border-color: #00a0e9; background: #00a0e9
 /*board*/
 
 /*#main-content dl {position: relative; height: 192px; }*/
-#main-content dl {width: 50%; position: absolute; top: 370px; right: 0; height: 300px; }
-#main-content dl.board dt {float: left; width: 50%; height: 75px; line-height: 30px; font-size: 14px; text-align: center;}
-#main-content dl.board dt a {color: #afafaf; display: block; width: 100%; height: 48px; line-height: 48px}
+#main-content dl {width: 50%; position: absolute; top: 519px; right: 0; height: 300px; }
+#main-content dl.board dt {float: left; width: 50%; height: 75px; line-height: 30px; font-size: 14px; font-weight: 400; text-align: center;}
+#main-content dl.board dt a {color: #afafaf; display: block; width: 100%; height: 75px; line-height: 75px}
 #main-content dl.board dt.on {background:#1b4c77; }
 #main-content dl.board dt {background:#113956; }
 #main-content dl.board dt.on a {color: #fff;}
-#main-content dl.board dt.on a:after {content: ""; display: block; margin: -15px auto; width: 65px; height: 3px; border-bottom: 1px solid #fff; }
-#main-content dl.board dt a:hover {font-size: 19px; border-bottom: 1px solid #fff; }
+#main-content dl.board dt.on a:after {content: ""; display: block; margin: -22px auto; width: 90px; height: 3px; border-bottom: 1px solid #fff; }
+#main-content dl.board dt a:hover {font-size: 25px; border-bottom: 1px solid #fff; }
 #main-content dl.board dt {position: relative;}
 
 #main-content dl.board dd {position: absolute; top: 76px; left: 0px; width: 100%;display: none; background:#eeeeee}
@@ -136,11 +119,11 @@ div.image-swipe ul.indicator li.on a {border-color: #00a0e9; background: #00a0e9
 #main-content dl a.more {position: absolute; right: 50%; top: 10px; margin-right: 16px; width: 15px; height: 15px; background: url(../img/icon_more.png) 0 center no-repeat ; background-size: 100%; text-indent: -9999px}
 #main-content dl a.more02 {display: block; right: 0px; top: 10px; }
 #main-content dl.board dd ul li {position: relative; height: 150px; }
-#main-content dl.board dd ul li a {display: block; width: 100%; padding: 5px 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#main-content dl.board dd ul li a {display: block; width: 100%; font-size: 18px; font-weight: 600; padding: 20px 16px 10px ; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-#main-content dl.board dd ul li span.board-content {font-size: 12px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; white-space:normal; line-height:15px; height:30px; padding: 0 16px; overflow:hidden;text-overflow: ellipsis; text-align:left;}
+#main-content dl.board dd ul li span.board-content {font-size: 14px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; white-space:normal; line-height: 25px; height:50px; padding: 0 16px; overflow:hidden;text-overflow: ellipsis; text-align:left;}
 #main-content dl.board dd ul li a:hover {color: #1b4c77;}
-#main-content dl.board dd ul li span.date {position: absolute; right: 16px; top: 0; font-size: 12px; color: #777777;}
+#main-content dl.board dd ul li span.date {position: absolute; right: 16px; top: 20px; font-size: 12px; color: #777777;}
 
 
 
@@ -150,30 +133,30 @@ div.image-swipe ul.indicator li.on a {border-color: #00a0e9; background: #00a0e9
 .link > li {position: relative; width: 25%; height: 150px; text-align: center; float: left;}
 .link > li:first-child {height: 300px;}
 .link > li:first-child a {height: 300px; line-height: 300px;}
-.link > li:nth-child(2) {margin-right: 50%;}
-.link > li:nth-child(3) {margin-right: 50%;}
-.link > li:nth-child(4) {position: absolute;left: 0; top:744px; width: 50%; height: 300px;}
+.link > li:nth-child(2) {margin-right: 50%; }
+.link > li:nth-child(3) {margin-right: 50%; }
+.link > li:nth-child(4) {position: absolute;left: 0; top:894px; width: 50%; height: 300px;}
 .link > li:nth-child(4) a {height: 300px; line-height: 300px;}
 .link > li:nth-child(5) {float: right; height: 300px;}
 .link > li:nth-child(5) a {height: 300px; line-height: 300px;}
 .link > li:nth-child(6) {float: right; margin-left: 50%;}
 .link > li:nth-child(7) {float: right; }
-.link > li a {display: block; color: #fff; width: 100%; height: 150px; line-height: 150px;}
+.link > li a {display: block; color: #fff; width: 100%; height: 150px; line-height: 150px; }
 .link > li a {background: url(../img/1200_link_01.png) center no-repeat; background-size: 100%; transition:all 0.5s;}
-.link > li:nth-child(2) a {background-image: url(../img/1200_link_02.png); color:#2d2d2d; line-height: 60px;}
-.link > li:nth-child(2) span {display: block; margin: -16px auto; color:#2d2d2d; font-size: 10px; font-weight: 400; line-height: 12px}
+.link > li:nth-child(2) a {text-align: left; padding: 30px 120px 0 40px; box-sizing: border-box; background-image: url(../img/1200_link_02.png); background-size: 101%; color:#2d2d2d; line-height: 30px;}
+.link > li:nth-child(2) span {display: block; margin: 10px auto; color:#2d2d2d; font-size: 10px; font-weight: 400; line-height: 12px}
 .link > li:nth-child(3) a {background-image: url(../img/1200_link_03.png);}
 
 .link > li:nth-child(4) a {background: url(../img/1200_link_04_video.jpg) center center no-repeat; transition:all 0.5s; text-indent:-9999px ;background-size: 100%; }
 .link > li:nth-child(4) span {display:block; position: absolute; top:50%; left: 50%; margin: -22px 0 0 -22px; background: url(../img/icon_play.png) center center no-repeat; background-size: cover; width:44px; height: 44px; transition:all 1.1s;}
 .link > li:nth-child(4) a:hover span {transform: scale(1.2);} 
 .link > li:nth-child(5) a {background-image: url(../img/1200_link_06.png);}
-.link > li:nth-child(6) a {background-image: url(../img/1200_link_07.png);}
-.link > li:nth-child(7) a {color: #2d2d2d; background-image: none;}
-.link > li:nth-child(6) a {background-image: url(../img/1200_link_07.png); color:#fff; line-height: 60px;}
-.link > li:nth-child(6) span {display: block; margin: -16px auto; color:#fff; font-size: 12px; font-weight: 400; line-height: 12px}
-.link > li:nth-child(7) a {line-height: 60px;}
-.link > li:nth-child(7) span {display: block; margin: -16px auto; color:#2d2d2d; font-size: 12px; font-weight: 400; line-height: 12px}
+.link > li:nth-child(6) a {text-align: left; background-image: url(../img/1200_link_07.png); padding: 40px; box-sizing: border-box; }
+.link > li:nth-child(7) a {text-align: left; padding: 40px; box-sizing: border-box;color: #2d2d2d; background-image: none;}
+.link > li:nth-child(6) a {background-image: url(../img/1200_link_07.png); color:#fff; line-height: 18px;}
+.link > li:nth-child(6) span {display: block; margin: 10px auto; color:#fff; font-size: 15px; font-weight: 400; line-height: 25px}
+.link > li:nth-child(7) a {line-height: 18px;}
+.link > li:nth-child(7) span {display: block; margin: 10px auto; color:#2d2d2d; font-size: 15px; font-weight: 400; line-height: 25px}
 
 
 .link > li a:hover {background-size: 110%;}
@@ -194,7 +177,7 @@ div.slide-banner div.box ul li {float: left; width: 150px; margin: 0 auto;}
 div.slide-banner div.box ul li img {width: 100%;height: 150px;}
 
 div.slide-banner p.control a.prev,
-div.slide-banner p.control a.next {position: absolute; top: 25px; width: 40px; height: 35px; line-height: 35px; box-sizing: border-box; background: rgba(0,0,0,0.3)}
+div.slide-banner p.control a.next {position: absolute; top: 55px; width: 40px; height: 35px; line-height: 35px; box-sizing: border-box; background: rgba(0,0,0,0.3)}
 
 div.slide-banner p.control a.prev {left: 0px; }
 div.slide-banner p.control a.next {right: 0px;}
@@ -211,5 +194,13 @@ div.slide-banner p.control a.next {right: 0px;}
 
 .copyright {font-size: 7px; color: #666666;}
 
+
+
+
+/*
+
+i.fa {display: inline-block; overflow: hidden; position: relative; vertical-align: middle;}
+i.fa span {position: absolute; left: -999px;}
+*/
 
 

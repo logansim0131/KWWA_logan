@@ -103,7 +103,7 @@
                     <div class="box">
                         <ul class="image">
                             <li>
-                                <a href="#"><img alt="석양이 지는 바다위에서 서핑보드를 타고 있는 남성" src="img/main_image_01.jpg" /></a>
+                                <a href="#"><img alt="석양이 지는 바다위에서 서핑보드를 타고 있는 남성" src="img/768_main_image_01.jpg" /></a>
                             </li>
                             <li>
                                 <a href="#"><img alt="물살을 일으키며 웨이크보드를 즐기는 남성" src="img/main_image_02.jpg" /></a>
@@ -237,13 +237,13 @@
 
     <script>
         'use strict';
-        /*게시판*/
+        /**/
         $('#main-content dt').on('click focus', function() {
             $('#main-content dt').removeClass('on');
             $(this).addClass('on');
         });
 
-        /*네비*/
+
         $('#gnb > li > a').on('mouseenter focus', function() {
             $('#gnb ul').css({
                 'display': 'none'
@@ -270,101 +270,101 @@
 
         /*이미지 슬라이드*/
 
-        applyImageSwipe('div.image-swipe');
-
-        function applyImageSwipe(selector) {
-            var imageNow = 0;
-            var imagePrev = 0;
-            var imageNext = 0;
-            var numImage = $(selector).find('ul.image li').length;
-            var widthSlide = $(selector).innerWidth();
-            var startX = 0;
-            var delX = 0;
-            var offsetX = 0;
-            var offsetXMin = widthSlide - (numImage * widthSlide);
-
-          
-            $(selector).find('ul.image li').each(function(i) {
-                $(selector).find('ul.indicator').append('<li><a href="#">' + (i + 1) + '번 이미지</a></li>');
-                $(this).css({
-                    'display': 'block',
-                    'width': widthSlide + 'px',
-                    'left': (i * widthSlide) + 'px'
-                });
-            });
-            $(selector).find('ul.image').css({
-                'width': (numImage * widthSlide) + 'px'
-            });
-
-            showImage(1);
-
-            $(selector).find('ul.indicator li a').on('click', function() {
-                var index = $(selector).find('ul.indicator li').index($(this).parent());
-                showImage(index + 1);
-            });
-
-            $(selector).find('p.control a.prev').on('click', function() {
-                $(this).stop().animate({
-                    'left': '-10px'
-                }, 100).animate({
-                    'left': '0px'
-                }, 200);
-                showImage(imagePrev);
-            });
-
-            $(selector).find('p.control a.next').on('click', function() {
-                $(this).stop().animate({
-                    'right': '-10px'
-                }, 100).animate({
-                    'right': '0px'
-                }, 200);
-                showImage(imageNext);
-            });
-
-            $(selector).find('ul.image').on('mousedown touchstart', function(e) {
-                e.preventDefault();
-                $(selector).find('ul.image').css({
-                    'transition': 'none'
-                });
-                if (e.clientX === undefined) e = e.originalEvent.touches[0];
-                startX = e.clientX;
-                $(document).on('mousemove touchmove', function(e) {
-                    if (e.clientX === undefined) e = e.originalEvent.touches[0];
-                    delX = e.clientX - startX;
-                    if ((offsetX + delX) > 0 || (offsetX + delX) < offsetXMin) {
-                        delX = delX / 5;
-                    }
-                  
-                    $(selector).find('ul.image').css({
-                        'left': (offsetX + delX) + 'px'
-                    });
-                });
-                $(document).on('mouseup touchend', function() {
-                    $(document).off('mousemove mouseup touchmove touchend');
-                    if (delX < -50) {
-                        showImage(imageNext);
-                    } else if (delX > 50) {
-                        showImage(imagePrev);
-                    } else {
-                        showImage(imageNow);
-                    }
-                });
-            });
-
-           
-            function showImage(n) {
-                offsetX = -(n - 1) * widthSlide;
-                $(selector).find('ul.image').css({
-                    'transition': 'left 0.4s',
-                    'left': offsetX + 'px'
-                });
-                $(selector).find('ul.indicator li').removeClass('on');
-                $(selector).find('ul.indicator li:eq(' + (n - 1) + ')').addClass('on');
-                imageNow = n;
-                imagePrev = (n - 1) < 1 ? 1 : n - 1;
-                imageNext = (n + 1) > numImage ? numImage : n + 1;
-            }
-        }
+//        applyImageSwipe('div.image-swipe');
+//
+//        function applyImageSwipe(selector) {
+//            var imageNow = 0;
+//            var imagePrev = 0;
+//            var imageNext = 0;
+//            var numImage = $(selector).find('ul.image li').length;
+//            var widthSlide = $(selector).innerWidth();
+//            var startX = 0;
+//            var delX = 0;
+//            var offsetX = 0;
+//            var offsetXMin = widthSlide - (numImage * widthSlide);
+//
+//            // 초기상태설정
+//            $(selector).find('ul.image li').each(function(i) {
+//                $(selector).find('ul.indicator').append('<li><a href="#">' + (i + 1) + '번 이미지</a></li>');
+//                $(this).css({
+//                    'display': 'block',
+//                    'width': widthSlide + 'px',
+//                    'left': (i * widthSlide) + 'px'
+//                });
+//            });
+//            $(selector).find('ul.image').css({
+//                'width': (numImage * widthSlide) + 'px'
+//            });
+//
+//            showImage(1);
+//
+//            $(selector).find('ul.indicator li a').on('click', function() {
+//                var index = $(selector).find('ul.indicator li').index($(this).parent());
+//                showImage(index + 1);
+//            });
+//
+//            $(selector).find('p.control a.prev').on('click', function() {
+//                $(this).stop().animate({
+//                    'left': '-10px'
+//                }, 100).animate({
+//                    'left': '0px'
+//                }, 200);
+//                showImage(imagePrev);
+//            });
+//
+//            $(selector).find('p.control a.next').on('click', function() {
+//                $(this).stop().animate({
+//                    'right': '-10px'
+//                }, 100).animate({
+//                    'right': '0px'
+//                }, 200);
+//                showImage(imageNext);
+//            });
+//
+//            $(selector).find('ul.image').on('mousedown touchstart', function(e) {
+//                e.preventDefault();
+//                $(selector).find('ul.image').css({
+//                    'transition': 'none'
+//                });
+//                if (e.clientX === undefined) e = e.originalEvent.touches[0];
+//                startX = e.clientX;
+//                $(document).on('mousemove touchmove', function(e) {
+//                    if (e.clientX === undefined) e = e.originalEvent.touches[0];
+//                    delX = e.clientX - startX;
+//                    if ((offsetX + delX) > 0 || (offsetX + delX) < offsetXMin) {
+//                        delX = delX / 5;
+//                    }
+//                    //console.log(delX);
+//                    $(selector).find('ul.image').css({
+//                        'left': (offsetX + delX) + 'px'
+//                    });
+//                });
+//                $(document).on('mouseup touchend', function() {
+//                    $(document).off('mousemove mouseup touchmove touchend');
+//                    if (delX < -50) {
+//                        showImage(imageNext);
+//                    } else if (delX > 50) {
+//                        showImage(imagePrev);
+//                    } else {
+//                        showImage(imageNow);
+//                    }
+//                });
+//            });
+//
+//            // n번 이미지 표시
+//            function showImage(n) {
+//                offsetX = -(n - 1) * widthSlide;
+//                $(selector).find('ul.image').css({
+//                    'transition': 'left 0.4s',
+//                    'left': offsetX + 'px'
+//                });
+//                $(selector).find('ul.indicator li').removeClass('on');
+//                $(selector).find('ul.indicator li:eq(' + (n - 1) + ')').addClass('on');
+//                imageNow = n;
+//                imagePrev = (n - 1) < 1 ? 1 : n - 1;
+//                imageNext = (n + 1) > numImage ? numImage : n + 1;
+//            }
+//        }
 
 
 
@@ -380,7 +380,7 @@
             var widthMove = $(selector).find('ul.image li:eq(0)').outerWidth(true);
             var offsetLeftMin = $(selector).find('div.box').innerWidth() - widthBar;
             var intervalTimer = null;
-            var onInterval = 0; 
+            var onInterval = 0; // 0 : timer off,  1: timer on
 
             
             
@@ -410,12 +410,12 @@
             });
             $(selector).find('p.control a.next').on('click', function() {
                 if ((offsetLeft - widthMove) < offsetLeftMin) {
-                    if (onInterval === 1) { 
+                    if (onInterval === 1) { // timer 동작
                         $(selector).find('ul.image').stop(true).animate({
                             'left': 0
                         }, 300);
                         offsetLeft = 0;
-                    } else { 
+                    } else { // user 동작
                         $(selector).find('ul.image').stop(true).animate({
                             'left': (offsetLeftMin - 10) + 'px'
                         }, 100).animate({
