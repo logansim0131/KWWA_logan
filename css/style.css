@@ -205,12 +205,19 @@ div.image-swipe ul.indicator li.on a {border-color: #00a0e9; background: #00a0e9
 .link > li:nth-child(4) a:hover span {transform: scale(1.2);} 
 .link > li:nth-child(5) a {background-image: url(../img/320_link_05.jpg);}
 .link > li:nth-child(6) a {background-image: url(../img/320_link_06.jpg);}
+.link > li:nth-child(7) a {color: #2d2d2d; background-image: none;}
+.link > li:nth-child(6) a {background-image: url(../img/320_link_06.jpg); color:#fff; line-height: 60px;}
+.link > li:nth-child(6) span {display: block; margin: -16px auto; color:#fff; font-size: 12px; font-weight: 400; line-height: 12px}
+.link > li:nth-child(7) a {line-height: 60px;}
+.link > li:nth-child(7) span {display: block; margin: -16px auto; color:#2d2d2d; font-size: 12px; font-weight: 400; line-height: 12px}
+
 .link > li a:hover {background-size: 110%;}
 
 .link > li:before {content: ""; display: block; position: absolute; top: 10px; right: 16px; width: 15px; height: 15px; background: url(../img/icon_more.png) center center no-repeat; background-size: 100%; }
 .link > li:nth-child(2):before {background-image: url(../img/icon_more_b.png);}
 .link > li:nth-child(4):before {display:none;}
-.link > li:last-child:before {display:none;}
+.link > li:nth-child(7):before {background-image: url(../img/icon_more_b.png);}
+
 
 
 
@@ -236,19 +243,9 @@ div.slide-banner p.control a.next {right: 0px;}
 #footer-menu ul {display: block; margin: 0px auto; }
 #footer-menu ul li{display: inline-block; color: #d3d3d3; font-size: 9px; line-height: 1;}
 #footer-menu ul li:first-child {color:#ff0000; }
-#footer-menu ul li + li:before {content: '|'; margin: 0 20px; font-size: 14px; color: #777777;}
+#footer-menu ul li + li:before {content: '|'; margin: 0 8px; font-size: 14px; color: #777777;}
 
-.copyright {font-size: 7px; color: #666666;}
-
-
-
-
-
-
-
-
-
-
+.copyright {font-size:5px; letter-spacing: -0.8px; color: #666666;}
 
 
 

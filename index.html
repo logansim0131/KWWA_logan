@@ -12,12 +12,11 @@
     <meta name="robots" content="index,follow" />
 
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/large.css" />
-    <link rel="stylesheet" type="text/css" media="all and (min-width:50px) and (max-width:767px)"   href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" media="all and (min-width:768px) and (max-width:1199px)"  href="css/medium.css">
+       <link rel="stylesheet" type="text/css" media="all and (min-width:1200px)"   href="css/large.css">
     
     <link rel="stylesheet" href="css/jquery-ui.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="fa/css/font-awesome.min.css" />
 
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
@@ -154,16 +153,19 @@
                         <h2><a href="#">대한 체육회 선수등록 신청<span>GO></span></a></h2>
                     </li>
                     <li>
-                        <h2><a href="#">대회일정 및 결과</a></h2>
+                        <h2><a href="#">협회 선수정보 보기</a></h2>
                     </li>
                     <li>
                         <h2><a href="#">서핑보드 동영상<span>PLAY</span></a></h2>
                     </li>
                     <li>
-                        <h2><a href="#">보도자료</a></h2>
+                        <h2><a href="#">대회일정 및 결과</a></h2>
                     </li>
                     <li>
-                        <h3><a href="#">산하기관 안내</a></h3>
+                        <h2><a href="#">보도자료<span>대한수상스키 • 웨이크보드협회의 미디어 보도자료를 만나보세요</span></a></h2>
+                    </li>
+                    <li>
+                        <h3><a href="#">산하기관 안내<span>대한수상스키 • 웨이크보드협회의 산하기관을 안내해 드립니다</span></a></h3>
                     </li>
                     <li>
                         <div class="slide-banner">
@@ -232,16 +234,16 @@
         </footer>
 
     </div>
-    
-     <script>
+
+    <script>
         'use strict';
-        /**/
+        /*게시판*/
         $('#main-content dt').on('click focus', function() {
             $('#main-content dt').removeClass('on');
             $(this).addClass('on');
         });
 
-
+        /*네비*/
         $('#gnb > li > a').on('mouseenter focus', function() {
             $('#gnb ul').css({
                 'display': 'none'
@@ -259,13 +261,193 @@
             $('header').removeClass('on');
         });
 
-        /*튀김 방지*/
+
         $(document).on('click', 'a[href="#"]', function(e) {
             e.preventDefault();
         });
 
-     </script>
-         
+
+
+        /*이미지 슬라이드*/
+
+        applyImageSwipe('div.image-swipe');
+
+        function applyImageSwipe(selector) {
+            var imageNow = 0;
+            var imagePrev = 0;
+            var imageNext = 0;
+            var numImage = $(selector).find('ul.image li').length;
+            var widthSlide = $(selector).innerWidth();
+            var startX = 0;
+            var delX = 0;
+            var offsetX = 0;
+            var offsetXMin = widthSlide - (numImage * widthSlide);
+
+          
+            $(selector).find('ul.image li').each(function(i) {
+                $(selector).find('ul.indicator').append('<li><a href="#">' + (i + 1) + '번 이미지</a></li>');
+                $(this).css({
+                    'display': 'block',
+                    'width': widthSlide + 'px',
+                    'left': (i * widthSlide) + 'px'
+                });
+            });
+            $(selector).find('ul.image').css({
+                'width': (numImage * widthSlide) + 'px'
+            });
+
+            showImage(1);
+
+            $(selector).find('ul.indicator li a').on('click', function() {
+                var index = $(selector).find('ul.indicator li').index($(this).parent());
+                showImage(index + 1);
+            });
+
+            $(selector).find('p.control a.prev').on('click', function() {
+                $(this).stop().animate({
+                    'left': '-10px'
+                }, 100).animate({
+                    'left': '0px'
+                }, 200);
+                showImage(imagePrev);
+            });
+
+            $(selector).find('p.control a.next').on('click', function() {
+                $(this).stop().animate({
+                    'right': '-10px'
+                }, 100).animate({
+                    'right': '0px'
+                }, 200);
+                showImage(imageNext);
+            });
+
+            $(selector).find('ul.image').on('mousedown touchstart', function(e) {
+                e.preventDefault();
+                $(selector).find('ul.image').css({
+                    'transition': 'none'
+                });
+                if (e.clientX === undefined) e = e.originalEvent.touches[0];
+                startX = e.clientX;
+                $(document).on('mousemove touchmove', function(e) {
+                    if (e.clientX === undefined) e = e.originalEvent.touches[0];
+                    delX = e.clientX - startX;
+                    if ((offsetX + delX) > 0 || (offsetX + delX) < offsetXMin) {
+                        delX = delX / 5;
+                    }
+                  
+                    $(selector).find('ul.image').css({
+                        'left': (offsetX + delX) + 'px'
+                    });
+                });
+                $(document).on('mouseup touchend', function() {
+                    $(document).off('mousemove mouseup touchmove touchend');
+                    if (delX < -50) {
+                        showImage(imageNext);
+                    } else if (delX > 50) {
+                        showImage(imagePrev);
+                    } else {
+                        showImage(imageNow);
+                    }
+                });
+            });
+
+           
+            function showImage(n) {
+                offsetX = -(n - 1) * widthSlide;
+                $(selector).find('ul.image').css({
+                    'transition': 'left 0.4s',
+                    'left': offsetX + 'px'
+                });
+                $(selector).find('ul.indicator li').removeClass('on');
+                $(selector).find('ul.indicator li:eq(' + (n - 1) + ')').addClass('on');
+                imageNow = n;
+                imagePrev = (n - 1) < 1 ? 1 : n - 1;
+                imageNext = (n + 1) > numImage ? numImage : n + 1;
+            }
+        }
+
+
+
+
+        /*배너*/
+
+        applySlideBanner('div.slide-banner');
+
+        function applySlideBanner(selector) {
+            var offsetLeft = 0;
+            var numBanner = $(selector).find('ul.image li').length;
+            var widthBar = $(selector).find('ul.image li:eq(0)').outerWidth(true) * numBanner;
+            var widthMove = $(selector).find('ul.image li:eq(0)').outerWidth(true);
+            var offsetLeftMin = $(selector).find('div.box').innerWidth() - widthBar;
+            var intervalTimer = null;
+            var onInterval = 0; 
+
+            
+            
+            $(selector).find('ul.image').css({
+                'width': widthBar + 'px'
+            });
+            intervalTimer = setInterval(function() {
+                $(selector).find('p.control a.next').trigger('click');
+            }, 2000);
+            onInterval = 1;
+
+            // 이벤트
+            $(selector).find('p.control a.prev').on('click', function() {
+                if ((offsetLeft + widthMove) > 0) {
+                    $(selector).find('ul.image').stop(true).animate({
+                        'left': '10px'
+                    }, 100).animate({
+                        'left': 0
+                    }, 200);
+                    offsetLeft = 0;
+                } else {
+                    $(selector).find('ul.image').stop(true).animate({
+                        'left': (offsetLeft + widthMove) + 'px'
+                    }, 300);
+                    offsetLeft += widthMove;
+                }
+            });
+            $(selector).find('p.control a.next').on('click', function() {
+                if ((offsetLeft - widthMove) < offsetLeftMin) {
+                    if (onInterval === 1) { 
+                        $(selector).find('ul.image').stop(true).animate({
+                            'left': 0
+                        }, 300);
+                        offsetLeft = 0;
+                    } else { 
+                        $(selector).find('ul.image').stop(true).animate({
+                            'left': (offsetLeftMin - 10) + 'px'
+                        }, 100).animate({
+                            'left': offsetLeftMin + 'px'
+                        }, 200);
+                        offsetLeft = offsetLeftMin;
+                    }
+                } else {
+                    $(selector).find('ul.image').stop(true).animate({
+                        'left': (offsetLeft - widthMove) + 'px'
+                    }, 300);
+                    offsetLeft -= widthMove;
+                }
+            });
+            
+            
+
+            $(selector).on('mouseenter', function() {
+                clearInterval(intervalTimer);
+                onInterval = 0;
+            }).on('mouseleave', function() {
+                intervalTimer = setInterval(function() {
+                    $(selector).find('p.control a.next').trigger('click');
+                }, 2000);
+                onInterval = 1;
+            });
+
+
+        }
+    </script>
+
 </body>
+
 
 </html>
